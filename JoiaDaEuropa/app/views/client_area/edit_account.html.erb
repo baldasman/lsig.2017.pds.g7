@@ -1,0 +1,11 @@
+<% form_for @account, html:{class: 'container'} do |f| %>
+
+  <div><span><%= t('name') %></span></div>
+
+  <div>
+    <%= text_field(:account, :name)%>
+  </div>
+
+  <button type="submit"></button>
+
+<%end %>
