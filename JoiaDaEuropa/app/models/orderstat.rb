@@ -1,0 +1,2 @@
+class Orderstat < ApplicationRecord
+end
