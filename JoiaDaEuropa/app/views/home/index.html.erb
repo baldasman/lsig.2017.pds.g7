@@ -1,6 +1,21 @@
 <div class="container">
   <h1>Home TESTE edu</h1>
 
+  <h2>pagina de teste</h2>
+
   <%= link_to t('my_account'), profile_index_path %>
+
+  <%= form_tag("/search", method: "get") do %>
+    <%= label_tag(:q, "Search for:") %>
+    <%= text_field_tag(q:) %>
+    <%= submit_tag("Search") %>
+  <% end %>
+
+  <form accept-charset="UTF-8" action="/search" method="get">
+    <input name="utf8" type="hidden" value="&#x2713;" />
+    <label for="q">Search for:</label>
+    <input id="q" name="q" type="text" />
+    <input name="commit" type="submit" value="Search" />
+  </form>
 
 </div>
