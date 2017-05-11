@@ -24,6 +24,11 @@ class ClientAreaController < ApplicationController
 
     if @account.save
       redirect_to client_area_index_path
+    else
+        flash[:error] = @account.errors.messages
+
+        redirect_to client_area_edit_account_path
+
     end
 
   end
@@ -35,10 +40,8 @@ class ClientAreaController < ApplicationController
     @account = Account.find_by(user_id: current_user.id)
 
     if @account.nil?
-
       current_user.account = Account.new name: current_user.email
       current_user.save
-
     end
 
 

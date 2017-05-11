@@ -5,8 +5,9 @@ class ApplicationController < ActionController::Base
 
   private
 
-  def
+  def check_lang
 
+      # todo: change lang
 
   end
 
