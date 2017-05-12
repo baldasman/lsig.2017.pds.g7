@@ -22,4 +22,9 @@
 en:
   hello: "Hello world"
   my_account: "My account"
-  email: "O meu email"
+  email: "My email"
+  gender: "My gender"
+  age: "My age"
+  address: "My address"
+  vat: "My vat"
+  tel_number: "My phone number"

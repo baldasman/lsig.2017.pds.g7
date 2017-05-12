@@ -22,3 +22,9 @@
 "pt-PT":
   hello: "Hello world"
   my_account: "A minha conta"
+  email: "O meu email"
+  gender: "O meu género"
+  age: "A minha idade"
+  address: "A minha morada"
+  vat: "O meu vat"
+  tel_number: "O meu número de telefone"
