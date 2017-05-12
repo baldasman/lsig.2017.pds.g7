@@ -21,21 +21,11 @@
 
   Inserir user
   <hr>
-  <%= form_for @user do |f| -%>
-    Name: <%= f.text_field :name %><br />
-    Age: <%= f.text_field :age %><br />
-    <%= f.submit%>
-  <% end -%>
+
 
   <hr>
   Mostrar users
-  <% if !@users.blank? %>
-    <% for item in @users %>
-      <%= item.name %> <%= item.age %> <br />
-    <% end %>
-  <%else %>
 
-  <% end %>
 
 
 </div>

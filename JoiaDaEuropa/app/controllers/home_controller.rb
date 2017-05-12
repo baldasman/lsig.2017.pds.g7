@@ -6,6 +6,8 @@ class HomeController < ApplicationController
 
       @today = Time.now
 
+      @users = User.all
+
   end
 
 
