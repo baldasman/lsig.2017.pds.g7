@@ -21,6 +21,13 @@
 
 "pt-PT":
   hello: "Hello world"
+
+  about: "Sobre nós"
+  mission: "Missão"
+  contacts: "Contactos"
+  news: "Notícias"
+  external_links: "Ligações externas"
+
   my_account: "A minha conta"
   email: "O meu email"
   gender: "O meu género"
