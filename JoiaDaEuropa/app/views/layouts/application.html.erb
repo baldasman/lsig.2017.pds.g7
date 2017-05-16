@@ -1,5 +1,14 @@
 <!DOCTYPE html>
 <html>
+  <style>
+    footer {
+      padding: 5px;
+      background-color: whitesmoke;
+    }
+
+      .raw content {height: 450px}
+  </style>
+
   <head>
     <title>JoiaDaEuropa</title>
     <%= csrf_meta_tags %>
@@ -32,16 +41,16 @@
                       </div>
                       <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
                   </form>
-
-                  <div class="col-md-3">
-                      <%= link_to 'PT', '/?lang=pt' %>
-                      <span>|</span>
-                      <%= link_to 'EN', '/?lang=en' %>
-                  </div>
               </div><!-- /.navbar-inner -->
           </div><!-- /.navbar -->
 
-          <div class="col-md-3">
+        <div class="col-md-3">
+          <%= link_to 'PT', '/?lang=pt' %>
+          <span>|</span>
+          <%= link_to 'EN', '/?lang=en' %>
+        </div>
+
+          <div class="pull-right">
             <% if current_user %>
                 <%= link_to 'Client Area', client_area_index_url %>
                 <%= link_to 'My Profile', profile_index_path %>
@@ -76,7 +85,8 @@
     <!-- FOOTER -->
     <footer class="footer navbar-fixed-bottom">
 
-        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p class="pull-right"><a href="http://www.facebook.com/pages/Joia-Da-Europa/259949700834272"><img src="<%= asset_path 'facebook.png' %>"></a>
+          <a href="https://pt.linkedin.com/in/joia-europa-61a96ab7"><img src="<%= asset_path 'linkedin.png' %>"></a></p>
 
         <li style="text-align: center">
           <p>&copy; Jóia da Europa Unipessoal, Lda.</p>
