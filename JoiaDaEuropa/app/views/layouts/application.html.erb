@@ -38,17 +38,18 @@
                       <span>|</span>
                       <%= link_to 'EN', '/?lang=en' %>
                   </div>
-                  <div class="col-md-3">
-                      <% if current_user %>
-                          <%= link_to 'Client Area', client_area_index_url %>
-                          <%= link_to 'My Profile', profile_index_path %>
-                          <%= link_to 'Sign Out', destroy_user_session_path, {method: 'delete'} %>
-                      <% else %>
-                          <%= link_to 'Sign In', new_user_session_path %>
-                      <% end %>
-                  </div>
               </div><!-- /.navbar-inner -->
           </div><!-- /.navbar -->
+
+          <div class="col-md-3">
+            <% if current_user %>
+                <%= link_to 'Client Area', client_area_index_url %>
+                <%= link_to 'My Profile', profile_index_path %>
+                <%= link_to 'Sign Out', destroy_user_session_path, {method: 'delete'} %>
+            <% else %>
+                <%= link_to 'Sign In', new_user_session_path %>
+            <% end %>
+          </div>
 
       </div> <!-- /.container -->
   </div><!-- /.navbar-wrapper -->
