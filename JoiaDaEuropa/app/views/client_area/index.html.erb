@@ -2,6 +2,22 @@
 
 <h1>Client Area</h1>
 
+<if signed_in? %>
 
+<div class="col-sm-3 col-md-2 sidebar">
+  <ul class="nav nav-sidebar">
+    <li class="sidebar_personal_details"><%= link_to "Detalhes Pessoais", "#" %></li>
+
+    <li class="sidebar_order_history"><%= link_to "Histórico de Encomendas", "#" %></li>
+
+    <li class="sidebar_order_status"><%= link_to "Estados de Encomendas", "#" %></li>
+  </ul>
+</div>
+
+</if>
 
 </div>
+
+
+
+

@@ -13,8 +13,11 @@ Rails.application.routes.draw do
 
 
   get '/profile/index'
-  get '/client_area/index'
+  get '/profile/edit'
+  patch '/profile/save_user_profile'
 
+
+  get '/client_area/index'
   get '/client_area/edit_account'
   patch '/client_area/save_account'
 
