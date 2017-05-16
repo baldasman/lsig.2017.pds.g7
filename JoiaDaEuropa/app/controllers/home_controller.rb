@@ -10,6 +10,48 @@ class HomeController < ApplicationController
 
   end
 
+  def aboutus
+
+      @today = Time.now
+
+      @users = User.all
+
+  end
+
+  def mission
+
+    @today = Time.now
+
+    @users = User.all
+
+  end
+
+  def contacts
+
+    @today = Time.now
+
+    @users = User.all
+
+  end
+
+  def news
+
+    @today = Time.now
+
+    @users = User.all
+
+  end
+
+  def externallinks
+
+    @today = Time.now
+
+    @users = User.all
+
+  end
+
+
+
 
 
 
