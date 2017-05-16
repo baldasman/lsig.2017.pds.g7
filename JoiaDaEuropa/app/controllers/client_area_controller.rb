@@ -37,10 +37,10 @@ class ClientAreaController < ApplicationController
 
   def check_user_profile
 
-    @user_profile = user_profile.find_by(user_id: current_user.id)
+    @user_profile = UserProfile.find_by(user_id: current_user.id)
 
     if @user_profile.nil?
-      current_user.user_profile = user_profile.new name: current_user.email
+      current_user.user_profile = UserProfile.new name: current_user.email
       current_user.save
     end
 
