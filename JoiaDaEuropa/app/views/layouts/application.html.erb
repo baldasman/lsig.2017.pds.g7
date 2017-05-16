@@ -38,17 +38,18 @@
                       <span>|</span>
                       <%= link_to 'EN', '/?lang=en' %>
                   </div>
-                  <div class="col-md-3">
-                      <% if current_user %>
-                          <%= link_to 'Client Area', client_area_index_url %>
-                          <%= link_to 'My Profile', profile_index_path %>
-                          <%= link_to 'Sign Out', destroy_user_session_path, {method: 'delete'} %>
-                      <% else %>
-                          <%= link_to 'Sign In', new_user_session_path %>
-                      <% end %>
-                  </div>
               </div><!-- /.navbar-inner -->
           </div><!-- /.navbar -->
+
+          <div class="col-md-3">
+            <% if current_user %>
+                <%= link_to 'Client Area', client_area_index_url %>
+                <%= link_to 'My Profile', profile_index_path %>
+                <%= link_to 'Sign Out', destroy_user_session_path, {method: 'delete'} %>
+            <% else %>
+                <%= link_to 'Sign In', new_user_session_path %>
+            <% end %>
+          </div>
 
       </div> <!-- /.container -->
   </div><!-- /.navbar-wrapper -->
@@ -73,9 +74,14 @@
 
 
     <!-- FOOTER -->
-    <footer>
+    <footer class="footer navbar-fixed-bottom">
+
         <p class="pull-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2013 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+
+        <li style="text-align: center">
+          <p>&copy; Jóia da Europa Unipessoal, Lda.</p>
+        </li>
+
     </footer>
   </body>
 </html>
