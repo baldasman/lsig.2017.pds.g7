@@ -29,7 +29,7 @@ body {
 -------------------------------------------------- */
 
 /* Special class on .container surrounding .navbar, used for positioning it into place. */
-.navbar-wrapper {
+.navbar-wrapperX {
     position: absolute;
     top: 0px;
     left: 0;

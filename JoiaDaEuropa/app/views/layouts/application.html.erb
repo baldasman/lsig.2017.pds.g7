@@ -11,27 +11,6 @@
   </head>
 
   <body>
-    <!--
-    <header class="row" style="text-align: center;">
-      <div class="col-md-3">
-        <%= link_to 'PT', '/?lang=pt' %>
-        <span>|</span>
-        <%= link_to 'EN', '/?lang=en' %>
-      </div>
-      <div class="col-md-6">
-        <img src="<%= asset_path 'logo.png' %>">
-      </div>
-      <div class="col-md-3">
-        <% if current_user %>
-          <%= link_to 'Client Area', client_area_index_url %>
-          <%= link_to 'My Profile', profile_index_path %>
-          <%= link_to 'Sign Out', destroy_user_session_path, {method: 'delete'} %>
-        <% else %>
-            <%= link_to 'Sign In', new_user_session_path %>
-        <% end %>
-      </div>
-    </header>
-    -->
 
   <!-- NAVBAR
 ================================================== -->
@@ -41,6 +20,7 @@
 
           <div class="navbar navbar-inverse">
               <div class="navbar-inner">
+                  <a class="brand" href="/"><img src="<%= asset_path 'logo.png' %>"></a>
                   <a class="brand" href="#">História</a>
                   <a class="brand" href="#">Missão</a>
                   <a class="brand" href="#">Contactos</a>
@@ -52,6 +32,21 @@
                       </div>
                       <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
                   </form>
+
+                  <div class="col-md-3">
+                      <%= link_to 'PT', '/?lang=pt' %>
+                      <span>|</span>
+                      <%= link_to 'EN', '/?lang=en' %>
+                  </div>
+                  <div class="col-md-3">
+                      <% if current_user %>
+                          <%= link_to 'Client Area', client_area_index_url %>
+                          <%= link_to 'My Profile', profile_index_path %>
+                          <%= link_to 'Sign Out', destroy_user_session_path, {method: 'delete'} %>
+                      <% else %>
+                          <%= link_to 'Sign In', new_user_session_path %>
+                      <% end %>
+                  </div>
               </div><!-- /.navbar-inner -->
           </div><!-- /.navbar -->
 
