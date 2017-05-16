@@ -1,4 +1,4 @@
-<%= form_for @account, :url => url_for(:controller => 'client_area', :action => 'save_account'), html: {class: 'container'} do |f| %>
+<%= form_for @user_profile, :url => url_for(:controller => 'client_area', :action => 'save_user_profile'), html: {class: 'container'} do |f| %>
 
     <div class="form-group">
         <label for="name"><%= t('name') %></label>
@@ -7,6 +7,51 @@
         <% if flash[:error] && flash[:error]['name'] %>
           <div class="alert danger"><%= flash[:error]['name'].join('<br/>') %></div>
         <% end %>
+    </div>
+
+    <div class="form-group">age
+      <label for="gender"><%= t('gender') %></label>
+      <%= f.text_field :gender %>
+
+      <% if flash[:error] && flash[:error]['gender'] %>
+          <div class="alert danger"><%= flash[:error]['gender'].join('<br/>') %></div>
+      <% end %>
+    </div>
+
+    <div class="form-group">
+      <label for="age"><%= t('age') %></label>
+      <%= f.text_field :age %>
+
+      <% if flash[:error] && flash[:error]['age'] %>
+          <div class="alert danger"><%= flash[:error]['age'].join('<br/>') %></div>
+      <% end %>
+    </div>
+
+    <div class="form-group">
+      <label for="address"><%= t('address') %></label>
+      <%= f.text_field :address %>
+
+      <% if flash[:error] && flash[:error]['address'] %>
+          <div class="alert danger"><%= flash[:error]['address'].join('<br/>') %></div>
+      <% end %>
+    </div>
+
+    <div class="form-group">
+      <label for="vat"><%= t('vat') %></label>
+      <%= f.text_field :vat %>
+
+      <% if flash[:error] && flash[:error]['vat'] %>
+          <div class="alert danger"><%= flash[:error]['vat'].join('<br/>') %></div>
+      <% end %>
+    </div>
+
+    <div class="form-group">
+      <label for="tel number"><%= t('tel number') %></label>
+      <%= f.text_field :tel_number                                                                                                           %>
+
+      <% if flash[:error] && flash[:error]['tel number'] %>
+          <div class="alert danger"><%= flash[:error]['tel number'].join('<br/>') %></div>
+      <% end %>
     </div>
 
     <%= f.submit "Gravar" %>

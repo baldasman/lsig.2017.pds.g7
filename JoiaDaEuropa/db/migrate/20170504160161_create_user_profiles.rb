@@ -2,8 +2,6 @@ class CreateUserProfiles < ActiveRecord::Migration[5.0]
   def change
     create_table :user_profiles do |t|
 
-      belongs_to :users
-
       t.string :name
       t.string :gender
       t.integer :age
