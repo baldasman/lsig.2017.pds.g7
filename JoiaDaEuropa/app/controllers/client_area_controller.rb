@@ -1,33 +1,33 @@
 class ClientAreaController < ApplicationController
 
-  before_action :check_account
+  before_action :check_user_profile
 
   def index
 
-    @account = current_user.account
+    @user_profile = current_user.user_profile
 
   end
 
-  def edit_account
+  def edit_user_profile
 
-    @account = current_user.account
+    @user_profile = current_user.user_profile
 
 
   end
 
 
-  def save_account
+  def save_user_profile
 
 
-    @account = current_user.account
-    @account.name = params[:account][:name]
+    @user_profile = current_user.user_profile
+    @user_profile.name = params[:user_profile][:name]
 
-    if @account.save
+    if @user_profile.save
       redirect_to client_area_index_path
     else
-        flash[:error] = @account.errors.messages
+        flash[:error] = @user_profile.errors.messages
 
-        redirect_to client_area_edit_account_path
+        redirect_to client_area_edit_user_profile_path
 
     end
 
@@ -35,12 +35,12 @@ class ClientAreaController < ApplicationController
 
   private
 
-  def check_account
+  def check_user_profile
 
-    @account = Account.find_by(user_id: current_user.id)
+    @user_profile = user_profile.find_by(user_id: current_user.id)
 
-    if @account.nil?
-      current_user.account = Account.new name: current_user.email
+    if @user_profile.nil?
+      current_user.user_profile = user_profile.new name: current_user.email
       current_user.save
     end
 
