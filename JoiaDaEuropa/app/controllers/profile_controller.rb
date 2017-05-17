@@ -8,7 +8,7 @@ class ProfileController < ApplicationController
 
   def edit
 
-    @user_profile = current_user.user_profile
+    @user_profile = UserProfile.find_or_initialize_by(user_id: params[:id])
 
 
   end
