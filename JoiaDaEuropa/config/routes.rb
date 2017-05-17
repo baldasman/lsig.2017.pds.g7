@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get 'home/mission'
   get 'home/contacts'
   get 'home/news'
-  get 'home/externallinks'
+  get 'home/partnerships'
 
 
   get '/profile/index'

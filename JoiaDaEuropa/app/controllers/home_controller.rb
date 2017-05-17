@@ -42,7 +42,7 @@ class HomeController < ApplicationController
 
   end
 
-  def externallinks
+  def partnerships
 
     @today = Time.now
 
