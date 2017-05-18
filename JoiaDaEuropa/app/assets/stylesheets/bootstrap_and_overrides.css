@@ -7,6 +7,10 @@
 
 .navbar.navbar-inverse.custom {
     border-radius: 0px;
+    width: 100%;
+    position: fixed;
+    line-height: 60px;
+    height: 60px;
 }
 
 .navbar.navbar-inverse.custom .btn:hover,

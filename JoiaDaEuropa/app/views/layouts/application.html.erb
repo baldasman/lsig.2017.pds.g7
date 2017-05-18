@@ -22,6 +22,11 @@
 
           <div class="navbar navbar-inverse custom">
               <div class="navbar-inner container">
+                <div class="col-md-3">
+                  <%= link_to 'PT', '/?lang=pt' %>
+                  <span>|</span>
+                  <%= link_to 'EN', '/?lang=en' %>
+                </div>
                   <a class="brand" href="/"><img src="<%= asset_path 'logo.png' %>"></a>
                   <a href="/home/aboutus" class="btn">História</a>
                   <a href="/home/mission" class="btn">Missão</a>
@@ -34,25 +39,17 @@
                       </div>
                       <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
                   </form>
+                <div class="pull-right">
+                  <% if current_user %>
+                      <a class="btn"><%= link_to 'Área do Cliente', client_area_index_path %></a>
+                      <a class="btn"><%= link_to 'Perfil', profile_index_path %></a>
+                      <a class="btn"><%= link_to 'Sair', destroy_user_session_path, {method: 'delete'} %></a>
+                  <% else %>
+                      <%= link_to 'Entrar', new_user_session_path %>
+                  <% end %>
+                </div>
               </div><!-- /.navbar-inner -->
           </div><!-- /.navbar -->
-
-        <div class="col-md-3">
-          <%= link_to 'PT', '/?lang=pt' %>
-          <span>|</span>
-          <%= link_to 'EN', '/?lang=en' %>
-        </div>
-
-          <div class="pull-right">
-            <% if current_user %>
-                <a class="btn"><%= link_to 'Área do Cliente', client_area_index_path %></a>
-                <a class="btn"><%= link_to 'Perfil', profile_index_path %></a>
-                <a class="btn"><%= link_to 'Sair', destroy_user_session_path, {method: 'delete'} %></a>
-            <% else %>
-                <%= link_to 'Entrar', new_user_session_path %>
-            <% end %>
-          </div>
-
       </div> <!-- /.container -->
   </div><!-- /.navbar-wrapper -->
 
