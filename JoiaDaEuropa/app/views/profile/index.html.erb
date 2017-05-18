@@ -26,5 +26,5 @@
     </tbody>
   </table>
 
-  <a href="/profile/edit" class="btn btn-primary">Editar Perfil</a>
+    <%= link_to 'Editar Perfil', profile_edit_path(@user.id), html: {class: 'btn btn-primary'} %>
 </div>

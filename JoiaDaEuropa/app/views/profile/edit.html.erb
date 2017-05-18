@@ -1,4 +1,5 @@
-<%= form_for @user_profile, :url => url_for(:controller => 'profile', :action => 'save_user_profile'), html: {class: 'container'} do |f| %>
+<%= form_for @user_profile, :url => url_for(:controller => 'profile', :action => 'save_user_profile'), :method => 'post', html: {class: 'container'} do |f| %>
+    <%= f.hidden_field :id %>
 
     <div class="form-group">
       <label for="name"><%= 'Nome' %></label>

@@ -21,13 +21,11 @@
 
 en:
   hello: "Hello world"
-
   about: "About us"
   mission: "Mission"
   contacts: "Contacts"
   news: "News"
   external_links: "External links"
-
   my_account: "My account"
   email: "My email"
   gender: "My gender"
@@ -35,4 +33,7 @@ en:
   address: "My address"
   vat: "My vat"
   tel_number: "My phone number"
-
+  order_state:
+    pending: 'Pending'
+    concluded: 'Concluded'
+    cancelled: 'Cancelled'

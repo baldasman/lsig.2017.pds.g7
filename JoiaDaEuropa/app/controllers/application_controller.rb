@@ -1,14 +1,15 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery with: :exception
-  before_action :authenticate_user!
-  before_action :check_lang
 
-  private
+    protect_from_forgery with: :exception
+    before_action :authenticate_user!
+    before_action :check_lang
 
-  def check_lang
+    private
 
-      # todo: change lang
+    def check_lang
 
-  end
+        # todo: change lang
+
+    end
 
 end

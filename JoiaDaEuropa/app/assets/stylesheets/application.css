@@ -23,21 +23,25 @@ body {
     color: #5a5a5a;
 }
 
+.my-title-h1 {
+    font-size: 3em;
+    font-weight: bold;
+}
+
+.text-black {
+    color: #000000;
+}
+
 
 
 /* CUSTOMIZE THE NAVBAR
 -------------------------------------------------- */
 
-/* Special class on .container surrounding .navbar, used for positioning it into place. */
-.navbar-wrapperX {
-    position: absolute;
-    top: 0px;
-    left: 0;
-    right: 0;
-    z-index: 10;
-    margin-top: 20px;
-    margin-bottom: -90px; /* Negative margin to pull up carousel. 90px is roughly margins and height of navbar. */
+.navbar.navbar-inverse.custom a.brand img {
+    height: 45px;
 }
+
+
 .navbar-wrapper .navbar {
 
 }

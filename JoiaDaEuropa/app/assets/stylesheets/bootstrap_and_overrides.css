@@ -4,3 +4,13 @@
   Static version of css will use Glyphicons sprites by default
   =require twitter-bootstrap-static/sprites
 */
+
+.navbar.navbar-inverse.custom {
+    border-radius: 0px;
+}
+
+.navbar.navbar-inverse.custom .btn:hover,
+.navbar.navbar-inverse.custom .btn:focus,
+.navbar.navbar-inverse.custom .btn.focus {
+    color: #FFFFFF;
+}
