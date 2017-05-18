@@ -1,2 +1,23 @@
 <h1>Order: #<%= @order.id %></h1>
 <h3><%= @order.order_state.description %></h3>
+
+<div class="container">
+  <table class="table">
+    <thead>
+    <tr>
+      <th>Observações</th>
+      <th>Data de Entrega</th>
+      <th>Preço</th>
+      <th>Anexo</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td><%= @order.obs %></td>
+      <td><%= @order.delivery_date.strftime('%d-%m-%Y') rescue nill %></td>
+      <td><%= number_to_currency(@order.price, unit: '€', separator: ',', delimiter: '.') %></td>
+      <td>anexo</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
