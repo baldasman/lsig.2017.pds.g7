@@ -13,12 +13,19 @@ Rails.application.routes.draw do
 
 
   get '/profile/index'
-  get '/profile/edit'
-  patch '/profile/save_user_profile'
 
+  get '/profile/edit'
+  post '/profile/save_user_profile'
 
   get '/client_area/index'
-  get '/client_area/order_history'
+  get '/client_area/new_order'
+  get '/client_area/order_review'
+  get '/client_area/pending_orders'
+  get '/client_area/completed_orders'
+  get '/client_area/canceled_orders'
+
+  get '/client_area/new_order'
+  post '/new_order/save_new_order'
 
   root to: 'home#index'
 end

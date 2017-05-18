@@ -19,6 +19,11 @@ class ProfileController < ApplicationController
 
     @user_profile = current_user.user_profile
     @user_profile.name = params[:user_profile][:name]
+    @user_profile.gender = params[:user_profile][:gender]
+    @user_profile.age = params[:user_profile][:age]
+    @user_profile.address = params[:user_profile][:address]
+    @user_profile.vat = params[:user_profile][:vat]
+    @user_profile.tel_number = params[:user_profile][:tel_number]
 
     if @user_profile.save
       redirect_to profile_index_path

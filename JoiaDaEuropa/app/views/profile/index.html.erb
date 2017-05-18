@@ -1,16 +1,30 @@
-<div class="container">
+<h1 style="text-align: center">Perfil</h1>
 
-  <h1>My Profile</h1>
+<div class=" col-md-9 col-lg-9 ">
+  <table class="table table-user-information">
+    <tbody>
+    <tr>
+      <td><font color="black">Nome</font></td>
+      <td><%= @user.user_profile.name %></td>
+    </tr>
+    <tr>
+      <td><font color="black">Morada</font></td>
+      <td><%= @user.user_profile.address %></td>
+    </tr>
+    <tr>
+      <td><font color="black">Vat</font></td>
+      <td><%= @user.user_profile.vat %></td>
+    </tr>
+    <tr>
+      <td><font color="black">Contacto</font></td>
+      <td><%= @user.user_profile.tel_number %></td>
+    </tr>
+    <tr>
+      <td><font color="black">Email</font></td>
+      <td><%= @user.email %></td>
+    </tr>
+    </tbody>
+  </table>
 
-  <%= link_to 'Edit Profile', profile_edit_path %>
-
-  <div>
-
-     <p><%= t('email')%></p>
-     <p><%= @user.email %></p>
-
-  </div>
-
-
-
+  <a href="/profile/edit" class="btn btn-primary">Editar Perfil</a>
 </div>

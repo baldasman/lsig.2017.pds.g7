@@ -1,20 +1,67 @@
 <div class="container">
 
-<h1>Colocar nova encomenda</h1>
+  <h1>Área do Cliente</h1>
 
-<div class="col-sm-3 col-md-2 sidebar">
-  <ul class="nav nav-sidebar">
+  <div class="col-sm-3 col-sm-2 sidebar">
+    <ul class="nav nav-sidebar">
+      <li class="sidebar_new_order active" ><%= link_to "Colocar Nova Encomenda", client_area_new_order_path %></li>
 
-    <li class="sidebar_new_order"><%= link_to "Colocar Nova Encomenda", client_area_new_order_path %></li>
+      <li class="sidebar_order_review"><%= link_to "Encomendas que necessitam revisão", client_area_order_review_path %></li>
 
-    <li class="sidebar_order_review"><%= link_to "Encomendas que necessitam revisão", client_area_order_review_path %></li>
+      <li class="sidebar_pending_orders"><%= link_to "Encomendas Pendentes", client_area_pending_orders_path %></li>
 
-    <li class="sidebar_pending_orders"><%= link_to "Estados Pendentes", client_area_pending_orders_path %></li>
+      <li class="sidebar_completed_orders"><%= link_to "Encomendas Concluídas", client_area_completed_orders_path %></li>
 
-    <li class="sidebar_completed_orders"><%= link_to "Estados Concluídas", client_area_completed_orders_path %></li>
+      <li class="sidebar_canceled_orders"><%= link_to "Encomendas Canceladas", client_area_canceled_orders_path %></li>
+    </ul>
+  </div>
 
-    <li class="sidebar_canceled_orders"><%= link_to "Estados Canceladas", client_area_canceled_orders_path %></li>
-  </ul>
+  <div style="text-align: right"><%= form_for @order, :url => url_for(:controller => 'new_order', :action => 'save_new_order'), html: {class: 'container'} do |f| %>
+
+      <div class="form-group">
+        <label for="name"><%= 'Observações' %></label>
+        <%= f.text_field :obs %>
+
+        <% if flash[:error] && flash[:error]['Observações'] %>
+            <div class="alert danger"><%= flash[:error]['Observações'].join('<br/>') %></div>
+        <% end %>
+      </div>
+
+      <div class="form-group">
+        <label for="gender"><%= 'Data de entrega' %></label>
+        <%= f.text_field :delivery_date %>
+
+        <% if flash[:error] && flash[:error]['Data de Entrega'] %>
+            <div class="alert danger"><%= flash[:error]['Data de entrega'].join('<br/>') %></div>
+        <% end %>
+      </div>
+
+      <div class="form-group">
+        <label for="age"><%= 'Preço' %></label>
+        <%= f.text_field :price %>
+
+        <% if flash[:error] && flash[:error]['Preço'] %>
+            <div class="alert danger"><%= flash[:error]['Preço'].join('<br/>') %></div>
+        <% end %>
+      </div>
+
+      <div class="form-group">
+        <label for="address"><%= 'Anexo' %></label>
+        <%= f.text_field :attachment_path %>
+
+        <% if flash[:error] && flash[:error]['Anexo'] %>
+            <div class="alert danger"><%= flash[:error]['Anexo'].join('<br/>') %></div>
+        <% end %>
+      </div>
+
+      <%= f.submit "Gravar", class: "btn btn-large btn-primary" %>
+
+  <% end%>
+
+  </div>
+
+
+
 </div>
 
-</div>
+
