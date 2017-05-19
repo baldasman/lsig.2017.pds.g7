@@ -11,7 +11,7 @@
     <div style="text-align: right">
         <%= form_for @order, :url => url_for(:controller => 'order', :action => 'save'), html: {class: 'container'} do |f| %>
             <div class="form-group">
-                <label for="name"><%= 'Observações' %></label>
+                <label for="obs"><%= 'Observações' %></label>
                 <%= f.text_field :obs %>
 
                 <% if flash[:error] && flash[:error]['Observações'] %>
@@ -19,9 +19,17 @@
                 <% end %>
             </div>
 
-            <div class="form-group">
-                <label for="gender"><%= 'Data de entrega' %></label>
-                <%= f.text_field :delivery_date %>
+          <label for="delivery_date"><%= 'Data de entrega' %></label>
+            <div class="container">
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <div class="input-group" style="text-align: right">
+                      <%= f.text_field :delivery_date, id:'delivery_date', :value => Date.today, :class =>'input-group date form-control' %>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
                 <% if flash[:error] && flash[:error]['Data de Entrega'] %>
                     <div class="alert danger"><%= flash[:error]['Data de entrega'].join('<br/>') %></div>
@@ -29,7 +37,7 @@
             </div>
 
             <div class="form-group">
-                <label for="age"><%= 'Preço' %></label>
+                <label for="price"><%= 'Preço' %></label>
                 <%= f.text_field :price %>
 
                 <% if flash[:error] && flash[:error]['Preço'] %>
@@ -37,14 +45,19 @@
                 <% end %>
             </div>
 
-            <div class="form-group">
-                <label for="address"><%= 'Anexo' %></label>
+            <div class="fileinputs">
+              <label class="choosefile">Escolher Ficheiro</label>
+              <input type="file" class="file">
+            </div>
+
+            <!--<div class="form-group">
+                <label for="attachment_path"><%= 'Anexo' %></label>
                 <%= f.text_field :attachment_path %>
 
                 <% if flash[:error] && flash[:error]['Anexo'] %>
                     <div class="alert danger"><%= flash[:error]['Anexo'].join('<br/>') %></div>
                 <% end %>
-            </div>
+            </div> -->
 
             <%= f.submit "Gravar", class: "btn btn-large btn-primary" %>
 

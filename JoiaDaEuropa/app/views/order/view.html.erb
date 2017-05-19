@@ -16,7 +16,7 @@
       <td><%= @order.obs %></td>
       <td><%= @order.delivery_date.strftime('%d-%m-%Y') rescue nill %></td>
       <td><%= number_to_currency(@order.price, unit: '€', separator: ',', delimiter: '.') %></td>
-      <td>anexo</td>
+      <td>(meter o campo)</td>
     </tr>
     </tbody>
   </table>
