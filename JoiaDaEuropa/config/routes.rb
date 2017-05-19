@@ -22,7 +22,7 @@ Rails.application.routes.draw do
 
   get '/order/index'
   get '/order/new'
-  get '/order/view/', to: 'order#view', as: 'order_view'
+  get '/order/view/:id', to: 'order#view', as: 'order_view'
   get '/order/edit/:id', to: 'order#edit', as: 'order_edit'
   post '/order/save'
 
