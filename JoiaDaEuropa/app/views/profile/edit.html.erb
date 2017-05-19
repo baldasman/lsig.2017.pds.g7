@@ -11,24 +11,6 @@
     </div>
 
     <div class="form-group">
-      <label for="gender"><%= 'Género' %></label>
-      <%= f.text_field :gender %>
-
-      <% if flash[:error] && flash[:error]['Género'] %>
-          <div class="alert danger"><%= flash[:error]['Género'].join('<br/>') %></div>
-      <% end %>
-    </div>
-
-    <div class="form-group">
-      <label for="age"><%= 'Idade' %></label>
-      <%= f.text_field :age %>
-
-      <% if flash[:error] && flash[:error]['Idade'] %>
-          <div class="alert danger"><%= flash[:error]['Idade'].join('<br/>') %></div>
-      <% end %>
-    </div>
-
-    <div class="form-group">
       <label for="address"><%= 'Morada' %></label>
       <%= f.text_field :address %>
 
