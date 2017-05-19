@@ -13,7 +13,7 @@
             <%= f.hidden_field :id %>
 
             <div class="form-group">
-                <label for="name"><%= 'Observações' %></label>
+                <label for="obs"><%= 'Observações' %></label>
                 <%= f.text_field :obs %>
 
                 <% if flash[:error] && flash[:error]['Observações'] %>
@@ -22,7 +22,7 @@
             </div>
 
             <div class="form-group">
-                <label for="gender"><%= 'Data de entrega' %></label>
+                <label for="delivery_date"><%= 'Data de entrega' %></label>
                 <%= f.text_field :delivery_date %>
 
                 <% if flash[:error] && flash[:error]['Data de Entrega'] %>
@@ -31,7 +31,7 @@
             </div>
 
             <div class="form-group">
-                <label for="age"><%= 'Preço' %></label>
+                <label for="price"><%= 'Preço' %></label>
                 <%= f.text_field :price %>
 
                 <% if flash[:error] && flash[:error]['Preço'] %>
@@ -40,7 +40,7 @@
             </div>
 
             <div class="form-group">
-                <label for="address"><%= 'Anexo' %></label>
+                <label for="attachment_path"><%= 'Anexo' %></label>
                 <%= f.text_field :attachment_path %>
 
                 <% if flash[:error] && flash[:error]['Anexo'] %>

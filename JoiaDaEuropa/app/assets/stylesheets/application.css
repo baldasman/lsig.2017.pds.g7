@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ *= require bootstrap-datetimepicker.css
  */
 
 /* GLOBAL STYLES
@@ -79,7 +80,7 @@ body {
 
 /* Carousel base class */
 .carousel {
-    margin-bottom: 60px;
+    margin-bottom: 20px;
 }
 
 .carousel .container {
