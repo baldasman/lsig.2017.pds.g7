@@ -30,20 +30,20 @@
                 <div class="col-md-3">
                   <a class="brand" href="/"><img src="<%= asset_path 'logo.png' %>"></a>
                 </div>
-                <div class="col-md-2">
+                <div class="col-md-8">
                   <a href="/home/aboutus" class="btn">História</a>
                   <a href="/home/mission" class="btn">Missão</a>
                   <a href="/home/contacts" class="btn">Contactos</a>
                   <a href="/home/news" class="btn btn">Notícias</a>
                   <a href="/home/partnerships" class="btn">Parcerias</a>
                 </div>
-                  <form class="navbar-form navbar-right col-md-3" role="search">
+                  <form class="navbar-form navbar-right col-md-8" role="search">
                       <div class="form-group">
                           <input type="text" class="form-control" placeholder="Procurar">
                       </div>
                       <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
                   </form>
-                <div class="pull-right col-md-3">
+                <div class="col-md-8" style="text-align: right">
                   <% if current_user %>
                       <a class="btn"><%= link_to 'Área do Cliente', client_area_index_path %></a>
                       <a class="btn"><%= link_to 'Perfil', profile_index_path %></a>
