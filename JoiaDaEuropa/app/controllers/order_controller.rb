@@ -1,5 +1,23 @@
 class OrderController < ApplicationController
 
+    def concluded
+
+        @orders = Order.where(user_id: current_user.id, order_state_id: 2)
+
+    end
+
+    def cancelled
+
+        @orders = Order.where(user_id: current_user.id, order_state_id: 3)
+
+    end
+
+    def pending
+
+        @orders = Order.where(user_id: current_user.id, order_state_id: 1)
+
+    end
+
     def index
 
         @orders = Order.where(user_id: current_user.id)
@@ -8,6 +26,7 @@ class OrderController < ApplicationController
 
     def view
 
+        @orders = Order.where(user_id: current_user.id)
         @order = Order.find_by(id: params[:id])
 
 

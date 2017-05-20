@@ -3,13 +3,14 @@
 <h1>As minhas encomendas</h1>
 
 <ul class="nav nav-pills">
-  <li role="presentation" class="active"><a href="<%= order_index_path %>">Todas</a></li>
-  <li role="presentation"><a href="<%= order_pending_path %>">Pendentes</a></li>
+  <li role="presentation"><a href="<%= order_index_path %>">Todas</a></li>
+  <li role="presentation" class="active"><a href="<%= order_pending_path %>">Pendentes</a></li>
   <li role="presentation"><a href="<%= order_cancelled_path %>">Canceladas</a></li>
   <li role="presentation"><a href="<%= order_concluded_path %>">Conclúidas</a></li>
+
 </ul>
 
-<div class="container" align="center">
+<div class="container">
   <div class="table-responsive">
     <table class="table">
       <thead>
@@ -18,7 +19,6 @@
         <th>Data de Entrega</th>
         <th>Preço</th>
         <th>Observações</th>
-        <th>Estado</th>
         <th>Ver detalhes</th>
       </tr>
       </thead>
@@ -29,7 +29,6 @@
             <td><%= h order.delivery_date.strftime('%d-%m-%Y') rescue nil %></td>
             <td><%= h number_to_currency(order.price, unit: '€', separator: ',', delimiter: '.') %></td>
             <td><%= h order.obs %></td>
-            <td><%= h order.order_state.state %></td>
             <td><%= link_to ("Ver detalhes"), order_view_path(order.id) %></td>
       <% end %>
       </tr>
