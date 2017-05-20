@@ -6,6 +6,12 @@ class OrderController < ApplicationController
 
     end
 
+    def approved
+
+        @orders = Order.where(user_id: current_user.id, order_state_id: 4)
+
+    end
+
     def cancelled
 
         @orders = Order.where(user_id: current_user.id, order_state_id: 3)
