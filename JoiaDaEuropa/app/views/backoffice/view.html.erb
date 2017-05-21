@@ -1,20 +1,22 @@
-<h1>Order: #<%= @order.id %></h1>
+<div class="text-center">
+  <p class="my-title-h1 text-black"><%=t('order_tittle')%> #<%= @order.id%></p>
+</div>
 
 <ul class="nav nav-pills">
-  <li role="presentation"><a href="<%= backoffice_index_path %>">Ver encomendas</a></li>
+  <li role="presentation"><a href="<%= backoffice_index_path %>"><%= t('view_orders_tittle') %></a></li>
 </ul>
 
 <div class="actions" align="center">
   <% @orders = Order.where(id: @order.id) %>
   <% if @orders.find_by(order_state_id: '1') %>
       <!-- Accept button -->
-      <%= link_to ("Aceitar"), backoffice_approve_order_path(order_id: @order.id), method: :post, data: {confirm: 'Tem a certeza que deseja aceitar esta encomenda?'}, class: 'btn btn-primary' %>
+      <%= link_to t('approve_order'), backoffice_approve_order_path(order_id: @order.id), method: :post, data: {confirm: t('accept')}, class: 'btn btn-primary' %>
       <!-- Cancel button -->
-      <%= link_to ("Cancelar"), backoffice_cancel_order_path(order_id: @order.id), method: :post, data: {confirm: 'Tem a certeza que deseja cancelar esta encomenda?'}, class: 'btn btn-danger' %>
+      <%= link_to t('cancel_order'), backoffice_cancel_order_path(order_id: @order.id), method: :post, data: {confirm: t('cancel')}, class: 'btn btn-danger' %>
   <%end %>
   <% if @orders.find_by(order_state_id: '4') %>
       <!-- Conclude button -->
-      <%= link_to ("Concluir"), backoffice_complete_order_path(order_id: @order.id), method: :post, data: {confirm: 'Tem a certeza que deseja concluir esta encomenda?'}, class: 'btn btn-primary' %>
+      <%= link_to t('complete_order'), backoffice_complete_order_path(order_id: @order.id), method: :post, data: {confirm: t('complete')}, class: 'btn btn-primary' %>
   <%end %>
 </div>
 
@@ -22,10 +24,9 @@
   <table class="table">
     <thead>
     <tr>
-      <th>Data de Entrega</th>
-      <th>Preço</th>
-      <th>Observações</th>
-      <th>Anexo</th>
+      <th><%= t('delivery_date_tittle') %></th>
+      <th><%= t('price_tittle') %></th>
+      <th><%= t('obs_tittle') %></th>
     </tr>
     </thead>
     <tbody>
@@ -33,7 +34,6 @@
       <td><%= h @order.delivery_date.strftime('%d-%m-%Y') rescue nil %></td>
       <td><%= h number_to_currency(@order.price, unit: '€', separator: ',', delimiter: '.') %></td>
       <td><%= h @order.obs %></td>
-      <td><%= h @order.attachment_path %></td>
     </tr>
     </tbody>
   </table>

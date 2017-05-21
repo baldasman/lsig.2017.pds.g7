@@ -1,59 +1,54 @@
 <div class="container">
 
-    <h1>Área do Cliente</h1>
+  <div class="text-center">
+    <p class="my-title-h1 text-black"><%=t('new_order_tittle')%></p>
+  </div>
 
     <div>
         <%= form_for @order, :url => url_for(:controller => 'order', :action => 'save'), html: {class: 'container'} do |f| %>
             <div class="form-group">
-                <label for="obs"><%= 'Observações' %></label>
+                <label for="obs"><%= t('obs_tittle') %></label>
                 <%= f.text_field :obs %>
 
-                <% if flash[:error] && flash[:error]['Observações'] %>
-                    <div class="alert danger"><%= flash[:error]['Observações'].join('<br/>') %></div>
+                <% if flash[:error] && flash[:error][t('obs_tittle')] %>
+                    <div class="alert danger"><%= flash[:error][t('obs_tittle')].join('<br/>') %></div>
                 <% end %>
             </div>
 
-          <label for="delivery_date"><%= 'Data de entrega' %></label>
+          <label for="delivery_date"><%= t('delivery_date_tittle') %></label>
             <div class="container">
               <div class="row">
                 <div class="col-sm-6">
                   <div class="form-group">
                     <div class="input-group">
-                      <%= f.text_field :delivery_date, id:'delivery_date', :value => Date.today, :class =>'input-group date form-control' %>
+                      <%= f.text_field :delivery_date, id:t('delivery_date_tittle'), :value => Date.today, :class =>'input-group date form-control' %>
                     </div>
                   </div>
                 </div>
               </div>
 
-                <% if flash[:error] && flash[:error]['Data de Entrega'] %>
-                    <div class="alert danger"><%= flash[:error]['Data de entrega'].join('<br/>') %></div>
+                <% if flash[:error] && flash[:error][t('delivery_date_tittle')] %>
+                    <div class="alert danger"><%= flash[:error][t('delivery_date_tittle')].join('<br/>') %></div>
                 <% end %>
             </div>
 
             <div class="form-group">
-                <label for="price"><%= 'Preço' %></label>
+                <label for="price"><%= t('price_tittle') %></label>
                 <%= f.text_field :price %>
 
-                <% if flash[:error] && flash[:error]['Preço'] %>
-                    <div class="alert danger"><%= flash[:error]['Preço'].join('<br/>') %></div>
+                <% if flash[:error] && flash[:error][t('price_tittle')] %>
+                    <div class="alert danger"><%= flash[:error][t('price_tittle')].join('<br/>') %></div>
                 <% end %>
             </div>
 
             <div class="fileinputs">
-              <label class="choosefile">Escolher Ficheiro</label>
+              <label class="choosefile"><%=t('upload_file_tittle')%></label>
               <input type="file" class="file">
             </div>
-
-            <!--<div class="form-group">
-                <label for="attachment_path"><%= 'Anexo' %></label>
-                <%= f.text_field :attachment_path %>
-
-                <% if flash[:error] && flash[:error]['Anexo'] %>
-                    <div class="alert danger"><%= flash[:error]['Anexo'].join('<br/>') %></div>
-                <% end %>
-            </div> -->
-
-            <%= f.submit "Gravar", class: "btn btn-large btn-primary" %>
+    </div>
+      <div class="text-center">
+        <%= f.submit t('save'), class: "btn btn-large btn-primary" %>
+      </div>
 
         <% end%>
 

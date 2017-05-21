@@ -33,6 +33,15 @@ body {
     color: #000000;
 }
 
+.my-title-h2 {
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.lead {
+    font-size: 1em;
+}
+
 
 
 /* CUSTOMIZE THE NAVBAR

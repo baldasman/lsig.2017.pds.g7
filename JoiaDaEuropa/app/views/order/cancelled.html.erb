@@ -1,25 +1,25 @@
 <div class="container" align="center">
 
-  <h1>As minhas encomendas</h1>
+  <p class="my-title-h1 text-black"><%= t('my_orders_tittle') %></p>
 
   <ul class="nav nav-pills">
-    <li role="presentation"><a href="<%= order_index_path %>">Todas</a></li>
-    <li role="presentation"><a href="<%= order_pending_path %>">Pendentes</a></li>
-    <li role="presentation" class="active"><a href="<%= order_cancelled_path %>">Canceladas</a></li>
-    <li role="presentation"><a href="<%= order_concluded_path %>">Conclúidas</a></li>
-    <li role="presentation"><a href="<%= order_approved_path %>">Aprovadas</a></li>
+    <li role="presentation"><a href="<%= order_index_path %>"><%=t('all_tittle')%></a></li>
+    <li role="presentation"><a href="<%= order_pending_path %>"><%=t('pending')%></a></li>
+    <li role="presentation" class="active"><a href="<%= order_cancelled_path %>"><%=t('cancelled')%></a></li>
+    <li role="presentation"><a href="<%= order_concluded_path %>"><%=t('concluded')%></a></li>
+    <li role="presentation"><a href="<%= order_approved_path %>"><%=t('approved')%></a></li>
   </ul>
 
-  <div class="container">
+  <div class="container" align="center">
     <div class="table-responsive">
       <table class="table">
         <thead>
         <tr>
-          <th>Número</th>
-          <th>Data de Entrega</th>
-          <th>Preço</th>
-          <th>Observações</th>
-          <th>Ver detalhes</th>
+          <th><%=t('number_tittle')%></th>
+          <th><%=t('delivery_date_tittle')%></th>
+          <th><%=t('price_tittle')%></th>
+          <th><%=t('obs_tittle')%></th>
+          <th><%=t('details_tittle')%></th>
         </tr>
         </thead>
         <% @orders.each do |order| %>
@@ -29,7 +29,7 @@
               <td><%= h order.delivery_date.strftime('%d-%m-%Y') rescue nil %></td>
               <td><%= h number_to_currency(order.price, unit: '€', separator: ',', delimiter: '.') %></td>
               <td><%= h order.obs %></td>
-              <td><%= link_to ("Ver detalhes"), order_view_path(order.id) %></td>
+              <td><%= link_to t('details_tittle'), order_view_path(order.id) %></td>
         <% end %>
         </tr>
         </tbody>

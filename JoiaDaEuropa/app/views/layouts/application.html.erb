@@ -35,7 +35,7 @@
                   <a href="/home/partnerships" class="btn"><%=t('partnerships_title')%></a>
                   <form class="navbar-form navbar-right" role="search">
                       <div class="form-group">
-                          <input type="text" class="form-control" placeholder="Procurar">
+                          <input type="text" class="form-control">
                       </div>
                       <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
                   </form>
@@ -45,15 +45,15 @@
                       <% @users = User.where(id: current_user.id) %>
 
                       <% if @users.find_by(is_client: '1') %>
-                        <a class="btn"><%= link_to 'Área do Cliente', client_area_index_path %></a>
-                        <a class="btn"><%= link_to 'Perfil', profile_index_path %></a>
-                        <a class="btn"><%= link_to 'Sair', destroy_user_session_path, {method: 'delete'} %></a>
+                        <a class="btn"><%= link_to t('Client_Area_tittle'), client_area_index_path %></a>
+                        <a class="btn"><%= link_to t('Profile_tittle'), profile_index_path %></a>
+                        <a class="btn"><%= link_to t('Logout_tittle'), destroy_user_session_path, {method: 'delete'} %></a>
                       <% else %>
-                        <a class="btn"><%= link_to 'Área Administrativa', backoffice_index_path %></a>
-                        <a class="btn"><%= link_to 'Sair', destroy_user_session_path, {method: 'delete'} %></a>
+                        <a class="btn"><%= link_to t('Administration_Area_tittle'), backoffice_index_path %></a>
+                        <a class="btn"><%= link_to t('Logout_tittle'), destroy_user_session_path, {method: 'delete'} %></a>
                       <% end %>
                   <% else %>
-                      <%= link_to 'Entrar', new_user_session_path %>
+                      <%= link_to t('Login_tittle'), new_user_session_path %>
                   <% end %>
                 </div>
               </div><!-- /.navbar-inner -->
