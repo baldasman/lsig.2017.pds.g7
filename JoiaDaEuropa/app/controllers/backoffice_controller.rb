@@ -9,23 +9,28 @@ class BackofficeController < ApplicationController
 
     def approve_order
 
-      @order = Order.find_by(id: params[:id])
+      @order = Order.find_by(id: params[:order_id])
       @order.order_state_id = 4
       @order.save
-      redirect_to backoffice_index_path
+      redirect_to backoffice_approved_path
 
     end
 
     def cancel_order
 
-      @order = Order.find_by(id: params[:id])
+      @order = Order.find_by(id: params[:order_id])
       @order.order_state_id = 3
       @order.save
-      redirect_to backoffice_index_path
+      redirect_to backoffice_cancelled_path
 
     end
 
     def complete_order
+
+      @order = Order.find_by(id: params[:order_id])
+      @order.order_state_id = 2
+      @order.save
+      redirect_to backoffice_concluded_path
 
     end
 

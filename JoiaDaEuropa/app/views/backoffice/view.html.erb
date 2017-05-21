@@ -10,11 +10,11 @@
       <!-- Accept button -->
       <%= link_to ("Aceitar"), backoffice_approve_order_path(order_id: @order.id), method: :post, data: {confirm: 'Tem a certeza que deseja aceitar esta encomenda?'}, class: 'btn btn-primary' %>
       <!-- Cancel button -->
-      <%= link_to ("Cancelar"), backoffice_cancelled_path(order_id: @order.id), method: :post, data: {confirm: 'Tem a certeza que deseja cancelar esta encomenda?'}, class: 'btn btn-danger' %>
+      <%= link_to ("Cancelar"), backoffice_cancel_order_path(order_id: @order.id), method: :post, data: {confirm: 'Tem a certeza que deseja cancelar esta encomenda?'}, class: 'btn btn-danger' %>
   <%end %>
   <% if @orders.find_by(order_state_id: '4') %>
       <!-- Conclude button -->
-      <%= link_to ("Concluir"), backoffice_concluded_path(order_id: @order.id), method: :post, data: {confirm: 'Tem a certeza que deseja concluir esta encomenda?'}, class: 'btn btn-primary' %>
+      <%= link_to ("Concluir"), backoffice_complete_order_path(order_id: @order.id), method: :post, data: {confirm: 'Tem a certeza que deseja concluir esta encomenda?'}, class: 'btn btn-primary' %>
   <%end %>
 </div>
 

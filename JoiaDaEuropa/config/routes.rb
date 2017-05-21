@@ -27,8 +27,8 @@ Rails.application.routes.draw do
   get '/backoffice/view/:id', to: 'backoffice#view', as: 'backoffice_view'
 
   post '/backoffice/approve_order'
-  post '/backoffice/concluded'
-  post '/backoffice/cancelled'
+  post '/backoffice/complete_order'
+  post '/backoffice/cancel_order'
 
 
   get '/order/index'
