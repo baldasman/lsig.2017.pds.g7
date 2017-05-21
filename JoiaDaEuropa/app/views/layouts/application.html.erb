@@ -45,15 +45,15 @@
                       <% @users = User.where(id: current_user.id) %>
 
                       <% if @users.find_by(is_client: '1') %>
-                        <a class="btn"><%= link_to 'Área do Cliente', client_area_index_path %></a>
-                        <a class="btn"><%= link_to 'Perfil', profile_index_path %></a>
-                        <a class="btn"><%= link_to 'Sair', destroy_user_session_path, {method: 'delete'} %></a>
+                        <a class="btn"><%= link_to t('client_area'), client_area_index_path %></a>
+                        <a class="btn"><%= link_to t('profile'), profile_index_path %></a>
+                        <a class="btn"><%= link_to t('exit'), destroy_user_session_path, {method: 'delete'} %></a>
                       <% else %>
-                        <a class="btn"><%= link_to 'Área Administrativa', backoffice_index_path %></a>
-                        <a class="btn"><%= link_to 'Sair', destroy_user_session_path, {method: 'delete'} %></a>
+                        <a class="btn"><%= link_to t('backoffice'), backoffice_index_path %></a>
+                        <a class="btn"><%= link_to t("exit"), destroy_user_session_path, {method: 'delete'} %></a>
                       <% end %>
                   <% else %>
-                      <%= link_to 'Entrar', new_user_session_path %>
+                      <%= link_to 'Login', new_user_session_path %>
                   <% end %>
                 </div>
               </div><!-- /.navbar-inner -->

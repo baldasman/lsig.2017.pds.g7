@@ -37,10 +37,26 @@
   email: "O meu email"
   gender: "O meu género"
   age: "A minha idade"
-  address: "A minha morada"
+  address: "Morada:"
   vat: "O meu vat"
   tel_number: "O meu número de telefone"
   order_state:
     pending: 'Pendente'
     concluded: 'Concluída'
     cancelled: 'Cancelada'
+  client_area: "Área de cliente"
+  profile: "Perfil"
+  exit: "Sair"
+  backoffice: "Área Administrativa"
+
+  new_order: "Nova encomenda"
+  show_orders: "Ver encomendas"
+
+  all: "Todas"
+  pending: "Pendentes"
+  canceled: "Canceladas"
+  concluded: "Concluídas"
+  approved: "Aprovadas"
+
+  my_orders: "As minhas encomendas"
+

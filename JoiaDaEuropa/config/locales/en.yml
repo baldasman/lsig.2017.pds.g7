@@ -45,3 +45,19 @@ en:
     pending: 'Pending'
     concluded: 'Concluded'
     cancelled: 'Cancelled'
+
+  client_area: "Client area"
+  profile: "Profile"
+  exit: "Exit"
+  backoffice: "Backoffice"
+
+  new_order: "New order"
+  show_orders: "Show orders"
+
+  all: "All"
+  pending: "Pending"
+  canceled: "Canceled"
+  concluded: "Concluded"
+  approved: "Approved"
+
+  my_orders: "My orders"

@@ -3,11 +3,11 @@
   <h1>As minhas encomendas</h1>
 
   <ul class="nav nav-pills">
-    <li role="presentation"><a href="<%= order_index_path %>">Todas</a></li>
-    <li role="presentation"><a href="<%= order_pending_path %>">Pendentes</a></li>
-    <li role="presentation"><a href="<%= order_cancelled_path %>">Canceladas</a></li>
-    <li role="presentation" class="active"><a href="<%= order_concluded_path %>">Conclúidas</a></li>
-    <li role="presentation"><a href="<%= order_approved_path %>">Aprovadas</a></li>
+    <li role="presentation"><a href="<%= order_index_path %>"><%=t('all')%></a></li>
+    <li role="presentation"><a href="<%= order_pending_path %>"><%=t('pending')%></a></li>
+    <li role="presentation"><a href="<%= order_cancelled_path %>"><%=t('canceled')%></a></li>
+    <li role="presentation" class="active"><a href="<%= order_concluded_path %>"><%=t('concluded')%></a></li>
+    <li role="presentation"><a href="<%= order_approved_path %>"><%=t('approved')%></a></li>
   </ul>
 
   <div class="container">
