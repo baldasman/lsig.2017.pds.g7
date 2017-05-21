@@ -86,3 +86,6 @@ en:
   accept: 'Are you sure you want to accept this order?'
   cancel: 'Are you sure you want to cancel this order?'
   complete: 'Are you sure you want to complete this order?'
+  signup_tittle: 'Sign up'
+  forgotpw_tittle: 'Forgot your password?'
+  resetpw: 'Send me reset password instructions'

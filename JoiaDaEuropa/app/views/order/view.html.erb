@@ -1,4 +1,4 @@
-<div class="text-center">
+<div class="container text-center">
   <p class="my-title-h1 text-black"><%=t('order_tittle')%> #<%= @order.id%></p>
 </div>
 
@@ -13,6 +13,7 @@
       <th><%= t('delivery_date_tittle') %></th>
       <th><%= t('price_tittle') %></th>
       <th><%= t('obs_tittle') %></th>
+      <th><%= t('state_tittle') %></th>
     </tr>
     </thead>
     <tbody>
@@ -20,6 +21,7 @@
       <td><%= h @order.delivery_date.strftime('%d-%m-%Y') rescue nil %></td>
       <td><%= h number_to_currency(@order.price, unit: '€', separator: ',', delimiter: '.') %></td>
       <td><%= h @order.obs %></td>
+      <td><%= h @order.order_state.state %></td>
     </tr>
     </tbody>
   </table>

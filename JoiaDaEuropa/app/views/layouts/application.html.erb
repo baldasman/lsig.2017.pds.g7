@@ -16,7 +16,7 @@
 
   <!-- NAVBAR
 ================================================== -->
-  <div class="navbar-wrapper">
+  <div class="navbar-fixed-top navbar-wrapper">
       <!-- Wrap the .navbar in .container to center it within the absolutely positioned parent. -->
       <div class="">
 
@@ -33,12 +33,6 @@
                   <a href="/home/contacts" class="btn"><%=t('contacts_title')%></a>
                   <a href="/home/news" class="btn btn"><%=t('news_title')%></a>
                   <a href="/home/partnerships" class="btn"><%=t('partnerships_title')%></a>
-                  <form class="navbar-form navbar-right" role="search">
-                      <div class="form-group">
-                          <input type="text" class="form-control">
-                      </div>
-                      <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
-                  </form>
                 <div class="pull-right">
                   <% if current_user %>
 
