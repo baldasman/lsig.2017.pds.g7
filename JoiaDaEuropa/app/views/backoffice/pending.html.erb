@@ -1,0 +1,39 @@
+<div class="container" align="center">
+
+  <h1>Encomendas dos clientes</h1>
+
+  <ul class="nav nav-pills">
+    <li role="presentation"><a href="<%= backoffice_index_path %>">Todas</a></li>
+    <li role="presentation" class="active"><a href="<%= backoffice_pending_path %>">Pendentes</a></li>
+    <li role="presentation"><a href="<%= backoffice_cancelled_path %>">Canceladas</a></li>
+    <li role="presentation"><a href="<%= backoffice_concluded_path %>">Concluídas</a></li>
+    <li role="presentation"><a href="<%= backoffice_approved_path %>">Aprovadas</a></li>
+  </ul>
+
+  <div class="container">
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+        <tr>
+          <th>Número</th>
+          <th>Data de Entrega</th>
+          <th>Preço</th>
+          <th>Observações</th>
+          <th>Ver detalhes</th>
+        </tr>
+        </thead>
+        <% @orders.each do |order| %>
+            <tbody>
+            <tr>
+              <td><%= h order.id %></td>
+              <td><%= h order.delivery_date.strftime('%d-%m-%Y') rescue nil %></td>
+              <td><%= h number_to_currency(order.price, unit: '€', separator: ',', delimiter: '.') %></td>
+              <td><%= h order.obs %></td>
+              <td><%= link_to ("Ver detalhes"), backoffice_view_path(order.id) %></td>
+        <% end %>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

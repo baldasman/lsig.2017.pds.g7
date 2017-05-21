@@ -19,6 +19,17 @@ Rails.application.routes.draw do
 
   get '/client_area/index'
 
+  get '/backoffice/index'
+  get '/backoffice/approved'
+  get '/backoffice/cancelled'
+  get '/backoffice/concluded'
+  get '/backoffice/pending'
+  get '/backoffice/view/:id', to: 'backoffice#view', as: 'backoffice_view'
+
+  post '/backoffice/approve_order'
+  post '/backoffice/concluded'
+  post '/backoffice/cancelled'
+
 
   get '/order/index'
   get '/order/new'

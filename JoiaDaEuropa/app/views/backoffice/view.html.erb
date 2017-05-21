@@ -1,0 +1,40 @@
+<h1>Order: #<%= @order.id %></h1>
+
+<ul class="nav nav-pills">
+  <li role="presentation"><a href="<%= backoffice_index_path %>">Ver encomendas</a></li>
+</ul>
+
+<div class="actions" align="center">
+  <% @orders = Order.where(id: @order.id) %>
+  <% if @orders.find_by(order_state_id: '1') %>
+      <!-- Accept button -->
+      <%= link_to ("Aceitar"), backoffice_approve_order_path(order_id: @order.id), method: :post, data: {confirm: 'Tem a certeza que deseja aceitar esta encomenda?'}, class: 'btn btn-primary' %>
+      <!-- Cancel button -->
+      <%= link_to ("Cancelar"), backoffice_cancelled_path(order_id: @order.id), method: :post, data: {confirm: 'Tem a certeza que deseja cancelar esta encomenda?'}, class: 'btn btn-danger' %>
+  <%end %>
+  <% if @orders.find_by(order_state_id: '4') %>
+      <!-- Conclude button -->
+      <%= link_to ("Concluir"), backoffice_concluded_path(order_id: @order.id), method: :post, data: {confirm: 'Tem a certeza que deseja concluir esta encomenda?'}, class: 'btn btn-primary' %>
+  <%end %>
+</div>
+
+<div class="container">
+  <table class="table">
+    <thead>
+    <tr>
+      <th>Data de Entrega</th>
+      <th>Preço</th>
+      <th>Observações</th>
+      <th>Anexo</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td><%= h @order.delivery_date.strftime('%d-%m-%Y') rescue nil %></td>
+      <td><%= h number_to_currency(@order.price, unit: '€', separator: ',', delimiter: '.') %></td>
+      <td><%= h @order.obs %></td>
+      <td><%= h @order.attachment_path %></td>
+    </tr>
+    </tbody>
+  </table>
+</div>

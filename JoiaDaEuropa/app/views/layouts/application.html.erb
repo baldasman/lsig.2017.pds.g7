@@ -41,9 +41,17 @@
                   </form>
                 <div class="pull-right">
                   <% if current_user %>
-                      <a class="btn"><%= link_to 'Área do Cliente', client_area_index_path %></a>
-                      <a class="btn"><%= link_to 'Perfil', profile_index_path %></a>
-                      <a class="btn"><%= link_to 'Sair', destroy_user_session_path, {method: 'delete'} %></a>
+
+                      <% @users = User.where(id: current_user.id) %>
+
+                      <% if @users.find_by(is_client: '1') %>
+                        <a class="btn"><%= link_to 'Área do Cliente', client_area_index_path %></a>
+                        <a class="btn"><%= link_to 'Perfil', profile_index_path %></a>
+                        <a class="btn"><%= link_to 'Sair', destroy_user_session_path, {method: 'delete'} %></a>
+                      <% else %>
+                        <a class="btn"><%= link_to 'Área Administrativa', backoffice_index_path %></a>
+                        <a class="btn"><%= link_to 'Sair', destroy_user_session_path, {method: 'delete'} %></a>
+                      <% end %>
                   <% else %>
                       <%= link_to 'Entrar', new_user_session_path %>
                   <% end %>
