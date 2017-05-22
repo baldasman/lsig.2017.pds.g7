@@ -87,3 +87,4 @@
   signup_tittle: 'Registar'
   forgotpw_tittle: 'Esqueceu-se da password?'
   resetpw: 'Enviar-me as instruções para uma nova password'
+  read: 'Ver mais'
